@@ -1,17 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  github_id: number;
+  github_id: number
 
   // github profile JSON string
   @Column()
-  raw: string;
+  raw: string
 
   @Column({ default: '' })
-  roles: string;
+  roles: string
 }

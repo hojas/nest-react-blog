@@ -1,31 +1,31 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class Article {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  title: string;
+  title: string
 
   @Column('text')
-  content: string;
+  content: string
 
   @Column()
-  category_id: number;
+  category_id: number
 
   @Column()
-  author_id: number;
+  author_id: number
 
   @Column({ default: '' })
-  tags: string;
+  tags: string
 
   @Column({ default: 0 })
-  view_count: number;
+  view_count: number
 
   @Column({ default: 0 })
-  like_count: number;
+  like_count: number
 
   @Column({ default: 0 })
-  collect_count: number;
+  collect_count: number
 }

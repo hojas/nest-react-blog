@@ -1,6 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { Category } from './category.entity';
-import { CategoryService } from './category.service';
+import { Controller, Get, Param } from '@nestjs/common'
+import { Category } from './category.entity'
+import { CategoryService } from './category.service'
 
 @Controller('categories')
 export class CategoryController {
@@ -8,11 +8,11 @@ export class CategoryController {
 
   @Get()
   findAll(): Promise<Category[]> {
-    return this.categoryService.findAll();
+    return this.categoryService.findAll()
   }
 
   @Get(':code')
   findByCode(@Param('code') code: string): Promise<Category> {
-    return this.categoryService.findByCode(code);
+    return this.categoryService.findByCode(code)
   }
 }

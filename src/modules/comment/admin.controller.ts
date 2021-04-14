@@ -10,13 +10,13 @@ import {
   UseGuards,
   Delete,
   HttpCode,
-} from '@nestjs/common';
-import { PAGE_SIZE } from 'src/constants/pagination';
-import { Pagination } from 'src/types/pagination';
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import { Comment } from './comment.entity';
-import { CommentService } from './comment.service';
+} from '@nestjs/common'
+import { PAGE_SIZE } from 'src/constants/pagination'
+import { Pagination } from 'src/types/pagination'
+import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
+import { Comment } from './comment.entity'
+import { CommentService } from './comment.service'
 
 @Controller('admin/comments')
 export class AdminController {
@@ -27,9 +27,9 @@ export class AdminController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
     @Query('page_size', new DefaultValuePipe(PAGE_SIZE), ParseIntPipe)
-    page_size: number,
+    page_size: number
   ): Promise<Pagination<Comment>> {
-    return this.commentService.findAll({ page, page_size });
+    return this.commentService.findAll({ page, page_size })
   }
 
   @Get(':article_id')
@@ -38,20 +38,20 @@ export class AdminController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
     @Query('page_size', new DefaultValuePipe(PAGE_SIZE), ParseIntPipe)
-    page_size: number,
+    page_size: number
   ): Promise<Pagination<Comment>> {
-    return this.commentService.findByArticleId(id, { page, page_size });
+    return this.commentService.findByArticleId(id, { page, page_size })
   }
 
   @Get(':id')
   @UseFilters(HttpExceptionFilter)
   async findById(@Param('id') id: number): Promise<Comment> {
-    const comment = await this.commentService.findById(id);
+    const comment = await this.commentService.findById(id)
     if (comment) {
-      return comment;
+      return comment
     }
 
-    throw new NotFoundException();
+    throw new NotFoundException()
   }
 
   @Delete(':id')
@@ -59,12 +59,12 @@ export class AdminController {
   @HttpCode(204)
   @UseFilters(HttpExceptionFilter)
   async remove(@Param('id') id: number): Promise<string> {
-    const res = await this.commentService.remove(id);
+    const res = await this.commentService.remove(id)
 
     if (!res) {
-      throw new NotFoundException();
+      throw new NotFoundException()
     }
 
-    return '';
+    return ''
   }
 }

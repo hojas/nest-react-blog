@@ -7,13 +7,13 @@ import {
   Query,
   ParseIntPipe,
   DefaultValuePipe,
-} from '@nestjs/common';
-import { Roles } from 'src/decorators/role.decorator';
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter';
-import { Pagination } from 'src/types/pagination';
-import { PAGE_SIZE } from 'src/constants/pagination';
-import { User } from './user.entity';
-import { UserService } from './user.service';
+} from '@nestjs/common'
+import { Roles } from 'src/decorators/role.decorator'
+import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { Pagination } from 'src/types/pagination'
+import { PAGE_SIZE } from 'src/constants/pagination'
+import { User } from './user.entity'
+import { UserService } from './user.service'
 
 @Controller('admin/users')
 @Roles('admin')
@@ -25,19 +25,19 @@ export class AdminController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
     @Query('page_size', new DefaultValuePipe(PAGE_SIZE), ParseIntPipe)
-    page_size: number,
+    page_size: number
   ): Promise<Pagination<User>> {
-    return this.userService.findAll({ page, page_size });
+    return this.userService.findAll({ page, page_size })
   }
 
   @Get(':id')
   @UseFilters(HttpExceptionFilter)
   async findById(@Param('id') id: number): Promise<User> {
-    const user = await this.userService.findById(id);
+    const user = await this.userService.findById(id)
     if (user) {
-      return user;
+      return user
     }
 
-    throw new NotFoundException();
+    throw new NotFoundException()
   }
 }

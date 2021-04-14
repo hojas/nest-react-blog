@@ -1,9 +1,9 @@
-import { Req } from '@nestjs/common';
+import { Req } from '@nestjs/common'
 
-type ReqType = typeof Req;
+type ReqType = typeof Req
 
 export type GithubUser = {
-  user: any;
-};
+  user: any
+}
 
-export type AuthReq = ReqType & GithubUser;
+export type AuthReq = ReqType & GithubUser

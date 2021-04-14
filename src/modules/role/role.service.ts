@@ -1,60 +1,60 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Role } from './role.entity';
-import { Repository, DeleteResult } from 'typeorm';
-import { RoleDto } from './role.dto';
+import { Injectable } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Role } from './role.entity'
+import { Repository, DeleteResult } from 'typeorm'
+import { RoleDto } from './role.dto'
 
 @Injectable()
 export class RoleService {
   constructor(
     @InjectRepository(Role)
-    private roleRepository: Repository<Role>,
+    private roleRepository: Repository<Role>
   ) {
-    this.initAdminRole();
+    this.initAdminRole()
   }
 
   async initAdminRole(): Promise<void> {
-    const role = new RoleDto();
-    role.name = '管理员';
-    role.code = 'admin';
+    const role = new RoleDto()
+    role.name = '管理员'
+    role.code = 'admin'
 
-    const r = await this.findByCode(role.code);
+    const r = await this.findByCode(role.code)
     if (!r) {
-      this.create(role);
+      this.create(role)
     }
   }
 
   findAll(): Promise<Role[]> {
-    return this.roleRepository.find();
+    return this.roleRepository.find()
   }
 
   findById(id: number): Promise<Role> {
-    return this.roleRepository.findOne(id);
+    return this.roleRepository.findOne(id)
   }
 
   findByCode(code: string): Promise<Role> {
-    return this.roleRepository.findOne({ where: { code } });
+    return this.roleRepository.findOne({ where: { code } })
   }
 
   create(role: RoleDto): Promise<Role> {
-    return this.roleRepository.save(role);
+    return this.roleRepository.save(role)
   }
 
   async update(id: number, role: RoleDto): Promise<Role | null> {
-    const r = await this.findById(id);
+    const r = await this.findById(id)
     if (r) {
-      return this.roleRepository.save({ ...role, id: r.id });
+      return this.roleRepository.save({ ...role, id: r.id })
     }
 
-    return null;
+    return null
   }
 
   async remove(id: number): Promise<DeleteResult | null> {
-    const r = await this.findById(id);
+    const r = await this.findById(id)
     if (r) {
-      return this.roleRepository.delete(id);
+      return this.roleRepository.delete(id)
     }
 
-    return null;
+    return null
   }
 }

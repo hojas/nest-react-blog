@@ -1,5 +1,5 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Injectable, UnauthorizedException } from '@nestjs/common'
+import { AuthGuard } from '@nestjs/passport'
 
 @Injectable()
 export class GithubAuthGuard extends AuthGuard('github') {
@@ -9,13 +9,13 @@ export class GithubAuthGuard extends AuthGuard('github') {
       throw new UnauthorizedException({
         status: 401,
         message: '无效的 Github CODE',
-      });
+      })
     }
 
     if (err || !user) {
-      throw err || new UnauthorizedException();
+      throw err || new UnauthorizedException()
     }
 
-    return user;
+    return user
   }
 }

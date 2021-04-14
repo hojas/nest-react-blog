@@ -1,16 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class Comment {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  content: string;
+  content: string
 
   @Column()
-  author_id: number;
+  author_id: number
 
   @Column()
-  article_id: number;
+  article_id: number
 }
