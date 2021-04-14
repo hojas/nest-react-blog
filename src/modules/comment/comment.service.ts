@@ -9,7 +9,7 @@ import { CommentDto } from './comment.dto'
 export class CommentService {
   constructor(
     @InjectRepository(Comment)
-    private commentRepository: Repository<Comment>
+    private commentRepository: Repository<Comment>,
   ) {}
 
   async findAll({
@@ -31,7 +31,7 @@ export class CommentService {
 
   async findByArticleId(
     article_id: number,
-    { page, page_size }: Pagination<Comment>
+    { page, page_size }: Pagination<Comment>,
   ): Promise<Pagination<Comment>> {
     const [results, count] = await this.commentRepository.findAndCount({
       where: { article_id },

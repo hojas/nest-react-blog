@@ -15,7 +15,7 @@ type Token = {
 export class AuthService {
   constructor(
     private userService: UserService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
   ) {}
 
   async validate(req: AuthReq): Promise<Token | null> {

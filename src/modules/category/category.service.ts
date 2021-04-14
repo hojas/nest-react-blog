@@ -8,7 +8,7 @@ import { CategoryDto } from './category.dto'
 export class CategoryService {
   constructor(
     @InjectRepository(Category)
-    private categoryRepository: Repository<Category>
+    private categoryRepository: Repository<Category>,
   ) {}
 
   findAll(): Promise<Category[]> {

@@ -36,7 +36,7 @@ export class ArticleController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
     @Query('page_size', new DefaultValuePipe(PAGE_SIZE), ParseIntPipe)
-    page_size: number
+    page_size: number,
   ): Promise<Pagination<Article>> {
     if (category_code) {
       const res = await this.articleService.findByCategoryCode(category_code, {
@@ -69,7 +69,7 @@ export class ArticleController {
   @UseGuards(JwtAuthGuard)
   create(
     @Req() req: AuthReq,
-    @Body('article') article: ArticleDto
+    @Body('article') article: ArticleDto,
   ): Promise<Article> {
     article.author_id = req.user.id
     return this.articleService.create(article)
@@ -80,7 +80,7 @@ export class ArticleController {
   @UseFilters(HttpExceptionFilter)
   async update(
     @Param('id') id: number,
-    @Body('article') article: ArticleDto
+    @Body('article') article: ArticleDto,
   ): Promise<Article> {
     const res = await this.articleService.update(id, article)
     if (res) {

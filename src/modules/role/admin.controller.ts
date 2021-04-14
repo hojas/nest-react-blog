@@ -32,7 +32,7 @@ export class AdminController {
   @Put(':id')
   async update(
     @Param('id') id: number,
-    @Body('role') role: RoleDto
+    @Body('role') role: RoleDto,
   ): Promise<Role> {
     const res = await this.roleService.update(id, role)
     if (res) {

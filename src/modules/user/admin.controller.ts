@@ -25,7 +25,7 @@ export class AdminController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
     @Query('page_size', new DefaultValuePipe(PAGE_SIZE), ParseIntPipe)
-    page_size: number
+    page_size: number,
   ): Promise<Pagination<User>> {
     return this.userService.findAll({ page, page_size })
   }

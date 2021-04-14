@@ -36,7 +36,7 @@ export class AdminController {
   @UseFilters(HttpExceptionFilter)
   async update(
     @Param('id') id: number,
-    @Body('category') category: CategoryDto
+    @Body('category') category: CategoryDto,
   ): Promise<Category | null> {
     const res = await this.categoryService.update(id, category)
     if (res) {

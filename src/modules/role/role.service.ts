@@ -8,7 +8,7 @@ import { RoleDto } from './role.dto'
 export class RoleService {
   constructor(
     @InjectRepository(Role)
-    private roleRepository: Repository<Role>
+    private roleRepository: Repository<Role>,
   ) {
     this.initAdminRole()
   }

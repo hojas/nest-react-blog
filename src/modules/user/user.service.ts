@@ -9,7 +9,7 @@ import { UserDto } from './user.dto'
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private userRepository: Repository<User>
+    private userRepository: Repository<User>,
   ) {
     this.initAdmin()
   }

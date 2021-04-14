@@ -11,7 +11,7 @@ export class ArticleService {
   constructor(
     private categoryService: CategoryService,
     @InjectRepository(Article)
-    private articleRepository: Repository<Article>
+    private articleRepository: Repository<Article>,
   ) {}
 
   async findAll({
@@ -33,7 +33,7 @@ export class ArticleService {
 
   async findByCategoryCode(
     category_code: string,
-    { page, page_size }: Pagination<Article>
+    { page, page_size }: Pagination<Article>,
   ): Promise<Pagination<Article>> {
     const category = await this.categoryService.findByCode(category_code)
 
