@@ -15,10 +15,10 @@ import {
 import { ArticleService } from './article.service'
 import { Article } from './article.entity'
 import { ArticleDto } from './article.dto'
-import { PAGE_SIZE } from 'src/constants/pagination'
-import { Pagination } from 'src/types/pagination'
-import { Roles } from 'src/decorators/role.decorator'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { PAGE_SIZE } from '~/constants/pagination'
+import { Pagination } from '~/types/pagination'
+import { Roles } from '~/decorators/role.decorator'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
 
 @Controller('admin/articles')
 @Roles('admin')

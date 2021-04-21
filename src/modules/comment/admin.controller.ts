@@ -11,9 +11,9 @@ import {
   Delete,
   HttpCode,
 } from '@nestjs/common'
-import { PAGE_SIZE } from 'src/constants/pagination'
-import { Pagination } from 'src/types/pagination'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { PAGE_SIZE } from '~/constants/pagination'
+import { Pagination } from '~/types/pagination'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
 import { Comment } from './comment.entity'
 import { CommentService } from './comment.service'

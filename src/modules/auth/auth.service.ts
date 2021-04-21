@@ -3,9 +3,9 @@ import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 
 import { UserService } from '../user/user.service'
-import { AuthReq } from 'src/types/auth-req'
-import { UserDto } from 'src/modules/user/user.dto'
-import { User } from 'src/modules/user/user.entity'
+import { AuthReq } from '~/types/auth-req'
+import { UserDto } from '~/modules/user/user.dto'
+import { User } from '~/modules/user/user.entity'
 
 type Token = {
   token: string

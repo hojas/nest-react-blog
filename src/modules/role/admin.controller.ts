@@ -9,7 +9,7 @@ import {
   Delete,
 } from '@nestjs/common'
 import { DeleteResult } from 'typeorm'
-import { Roles } from 'src/decorators/role.decorator'
+import { Roles } from '~/decorators/role.decorator'
 import { Role } from './role.entity'
 import { RoleDto } from './role.dto'
 import { RoleService } from './role.service'

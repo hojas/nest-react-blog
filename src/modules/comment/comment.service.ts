@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository, DeleteResult } from 'typeorm'
-import { Pagination } from 'src/types/pagination'
+import { Pagination } from '~/types/pagination'
 import { Comment } from './comment.entity'
 import { CommentDto } from './comment.dto'
 

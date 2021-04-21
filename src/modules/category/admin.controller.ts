@@ -11,8 +11,8 @@ import {
   Put,
 } from '@nestjs/common'
 import { DeleteResult } from 'typeorm'
-import { Roles } from 'src/decorators/role.decorator'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { Roles } from '~/decorators/role.decorator'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
 import { Category } from './category.entity'
 import { CategoryDto } from './category.dto'
 import { CategoryService } from './category.service'

@@ -9,10 +9,10 @@ import {
   NotFoundException,
 } from '@nestjs/common'
 import { AuthService } from './auth.service'
-import { AuthReq } from 'src/types/auth-req'
+import { AuthReq } from '~/types/auth-req'
 import { GithubAuthGuard } from './guards/github-auth.guard'
 import { JwtAuthGuard } from './guards/jwt-auth.guard'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
 import { User } from '../user/user.entity'
 import { UserService } from '../user/user.service'
 

@@ -17,12 +17,12 @@ import {
 } from '@nestjs/common'
 import { ArticleService } from './article.service'
 import { Article } from './article.entity'
-import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard'
+import { JwtAuthGuard } from '~/modules/auth/guards/jwt-auth.guard'
 import { ArticleDto } from './article.dto'
-import { PAGE_SIZE } from 'src/constants/pagination'
-import { Pagination } from 'src/types/pagination'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
-import { AuthReq } from 'src/types/auth-req'
+import { PAGE_SIZE } from '~/constants/pagination'
+import { Pagination } from '~/types/pagination'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
+import { AuthReq } from '~/types/auth-req'
 
 @Controller('articles')
 export class ArticleController {

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository, DeleteResult } from 'typeorm'
-import { CategoryService } from 'src/modules/category/category.service'
+import { CategoryService } from '~/modules/category/category.service'
 import { Article } from './article.entity'
 import { ArticleDto } from './article.dto'
-import { Pagination } from 'src/types/pagination'
+import { Pagination } from '~/types/pagination'
 
 @Injectable()
 export class ArticleService {

@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common'
 import { UserService } from './user.service'
 import { User } from './user.entity'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
 
 @Controller('users')
 export class UserController {

@@ -8,10 +8,10 @@ import {
   ParseIntPipe,
   DefaultValuePipe,
 } from '@nestjs/common'
-import { Roles } from 'src/decorators/role.decorator'
-import { HttpExceptionFilter } from 'src/filters/http-exception.filter'
-import { Pagination } from 'src/types/pagination'
-import { PAGE_SIZE } from 'src/constants/pagination'
+import { Roles } from '~/decorators/role.decorator'
+import { HttpExceptionFilter } from '~/filters/http-exception.filter'
+import { Pagination } from '~/types/pagination'
+import { PAGE_SIZE } from '~/constants/pagination'
 import { User } from './user.entity'
 import { UserService } from './user.service'
 
