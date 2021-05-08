@@ -23,4 +23,4 @@ services:
       - postgres
     links:
       - postgres
-    command: yarn start:prod
+    command: pnpm run start:prod

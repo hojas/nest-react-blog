@@ -3,12 +3,12 @@ FROM node:14.16.1-alpine
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY yarn.lock ./
-# RUN npm i -g yarn
-RUN yarn
+COPY pnpm-lock.yaml ./
+RUN npm i -g pnpm
+RUN pnpm i
 
 COPY . .
-RUN yarn build
+RUN pnpm run build
 
 EXPOSE 3000
-CMD ["yarn", "start:prod"]
+CMD ["pnpm", "run", "start:prod"]
